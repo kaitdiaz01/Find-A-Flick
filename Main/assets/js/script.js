@@ -28,4 +28,17 @@ function getApi() {
         });
       
         
+              // This calls the API, just update the url to have your key's name.
+              async function fetchYTKey() {
+                const url = 'https://yorkieportunus.herokuapp.com/store/tmdb-p1'
+                const response = await fetch(url);
+                const key = await response.json();
+                return key;
+            }
+            // Call this wherever you need your key.
+            fetchYTKey().then((key) => {
+                secretKey = key.apiKey;
+                console.log(secretKey);
+            });
+    
     

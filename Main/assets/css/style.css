@@ -4,16 +4,74 @@
     --font-color: #EEEEEE;
 }
 
+.custom-color {
+    background-color: var(--header-color);
+}
+
 .title, .subtitle{
     font-family: 'Fugaz One', cursive;
     font-size: 3rem;
     color: var(--font-color);
 }
 
-.custom-color {
-    background-color: var(--header-color);
+.genre-title {
+    text-align: center;
+    padding: 4px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
 }
 
+
+
+.floating-1 { 
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 110px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.floating-2 { 
+    animation-name: floating-2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 35px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(15px, 0px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+@keyframes floating-2 {
+    0% { transform: translate(15px,  0px); }
+    50%  { transform: translate(0px, 0px); }
+    100%   { transform: translate(15px, -0px); }   
+}
+
+.button-color {
+    background-color: var(--header-color);
+    color: var(--font-color);
+}
+
+#action {
+    font-family:'Bangers', cursive;
+    font-size: 17px;
+}
+#crime {
+   font-family:'Special Elite', cursive;
+
+}
 
 .subtitle {
     font-family: 'Dosis', sans-serif;
@@ -23,7 +81,6 @@
 
 .credit {
     font-size: 0.6rem;
-    padding: 3rem 3rem;
 }
 
 .logoImg {
@@ -54,5 +111,6 @@ h1 {
 .opacity {
     opacity: 0.7;
 }
+
 
 

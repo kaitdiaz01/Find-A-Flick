@@ -14,10 +14,6 @@
     background-color: var(--header-color);
 }
 
-.custom-color {
-    background-color: var(--header-color);
-}
-
 
 .subtitle {
     font-family: 'Dosis', sans-serif;

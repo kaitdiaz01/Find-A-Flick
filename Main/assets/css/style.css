@@ -7,3 +7,18 @@
     font-family: 'Dosis', sans-serif;
     font-size: 1.75rem;
 }
+
+.credit {
+    font-size: 0.6rem;
+    padding: 3rem 3rem;
+}
+
+.logoImg {
+    width: 18%;
+}
+
+h1 {
+    font-family: 'Dosis', sans-serif;
+    justify-content: center;
+    text-align: center;
+}

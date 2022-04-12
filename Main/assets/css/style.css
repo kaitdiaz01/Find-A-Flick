@@ -81,6 +81,7 @@
 
 .credit {
     font-size: 0.6rem;
+
 }
 
 .logoImg {
@@ -91,6 +92,13 @@ h1 {
     font-family: 'Dosis', sans-serif;
     justify-content: center;
     text-align: center;
+}
+
+.devTeam {
+    font-size: 1.25rem;
+    padding: 0;
+    margin: 0;
+    margin-top: -20px;
 }
 
 .centered {
@@ -111,6 +119,3 @@ h1 {
 .opacity {
     opacity: 0.7;
 }
-
-
-

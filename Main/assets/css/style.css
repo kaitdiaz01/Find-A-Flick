@@ -1,12 +1,25 @@
-.title {
+
+:root {
+    --header-color: #141E61;
+    --font-color: #EEEEEE;
+}
+
+.title, .subtitle{
     font-family: 'Fugaz One', cursive;
     font-size: 3rem;
+    color: var(--font-color);
 }
+
+.custom-color {
+    background-color: var(--header-color);
+}
+
 
 .subtitle {
     font-family: 'Dosis', sans-serif;
     font-size: 1.75rem;
 }
+
 
 .credit {
     font-size: 0.6rem;
@@ -22,3 +35,24 @@ h1 {
     justify-content: center;
     text-align: center;
 }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-family: fugaz one;
+    font-size: 100px;
+    }
+
+.opacity {
+    opacity: 0.7;
+}
+
+

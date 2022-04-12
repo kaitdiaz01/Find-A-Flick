@@ -1,3 +1,4 @@
+
 :root {
     --header-color: #141E61;
     --font-color: #EEEEEE;
@@ -11,7 +12,7 @@
 
 .custom-color {
     background-color: var(--header-color);
-}
+
 
 .subtitle {
     font-family: 'Dosis', sans-serif;
@@ -36,5 +37,4 @@
 .opacity {
     opacity: 0.7;
 }
-
 

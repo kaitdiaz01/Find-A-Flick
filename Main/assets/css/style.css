@@ -68,9 +68,40 @@
     font-family:'Bangers', cursive;
     font-size: 17px;
 }
-#crime {
+#crime, #mystery {
    font-family:'Special Elite', cursive;
+}
 
+#comedy {
+    font-family: 'Indie Flower', cursive;
+    font-size: 17px;
+}
+
+#drama {
+    font-family: 'Limelight', cursive;
+}
+
+#fantasy {
+    font-family: 'Pacifico', cursive;
+    font-size: 18px;
+}
+
+#horror {
+    font-family: 'Rubik Wet Paint', cursive;
+}
+
+#romance {
+    font-family: 'Homemade Apple', cursive;
+}
+
+#sci-fi {
+    font-family: 'Teko', sans-serif;
+    font-size: 18px;
+}
+
+#thriller {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
 }
 
 .subtitle {

@@ -5,14 +5,16 @@ let Title = "No Country For Old Men Official Trailer";
 
 let tmdbUrl = "https://api.themoviedb.org/3/discover/movie?api_key="
 //List of genre IDs
-var action = 28;
-var crime = 80;
-var comedy = 35;
-
-
-
-
-
+var action = "28";
+var crime = "80";
+var comedy = "35";
+var drama = "18";
+var fantasy = "14";
+var horror = "27";
+var mystery = "9648";
+var romance = "10749";
+var scifi = "878";
+var thriller = "53";
 
 let ytApiKey;
 let tmdbApiKey;

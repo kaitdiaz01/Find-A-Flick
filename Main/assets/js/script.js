@@ -42,18 +42,6 @@ console.log("Youtube fetch key is " + ytAPIKey);
 
 //function to fetch
 function getYoutubeClip(){
-  fetch(baseURL + Title + apiKey)
-  .then(function(response) {
-      return response.json();
-  })
-  .then(function(data){
-      console.log(data);
-      console.log(data.items)
-      //parsing out and logging items from the API.  we are getting a specific item from the data object by parsing through the objects in Data
-      console.log(data.items[0].id.videoId)
-
-//function to fetch
-function getYoutubeClip(){
     console.log(ytApiKey);
   fetch(baseURL + Title + "&key=" + ytApiKey)
 

@@ -1,7 +1,8 @@
 
 let baseURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q="
+
 //just a hard coded example to test.  eventually just becomes the movie title that is written into the iframe
-let Title = "No Country For Old Men Official Trailer";
+let trailerTitle;
 
 // /discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=150
 let tmdbUrl = "https://api.themoviedb.org/3/discover/movie?api_key="
@@ -48,7 +49,7 @@ async function fetchKeyYouTube() {
 fetchKeyYouTube().then((key) => {
     ytApiKey = key.apiKey;
     console.log(ytApiKey);
-    getYoutubeClip();
+    // getYoutubeClip();
 });
 
 // Sets the volume of the "Welcome Audio".
@@ -57,22 +58,20 @@ audio.volume = 0.33;
 
 
 function getTMDB() {
-    fetch(tmdbUrl +  tmdbApiKey + "&with_genres=18&sort_by=vote_average.desc&vote_count.gte=150")
+    fetch(tmdbUrl +  tmdbApiKey + "&language=en-US&with_genres=18&sort_by=vote_average.desc&vote_count.gte=1000")
     .then(function (response) {
         return response.json();
     })
     .then(function(data) {
         console.log(data);
+        trailerTitle = data.results[0].title + " official trailer";
+        console.log(trailerTitle);
+        getYoutubeClip(trailerTitle);
         
     })
 
     
 }
-
-
-
-
-
 
 
 //GLOBAL VARIABLE FOR THE YTAPIKEY SO THAT WE CAN USE IT IN THE FUNCTION BELOW FOR THE SEARCH FUNCTION WITH THE YOUTUBE API
@@ -81,11 +80,11 @@ console.log("Youtube fetch key is " + ytAPIKey);
 
 
 //function to fetch YOUTUBE SEARCH RESULTSD FOR THE MOVIE TITLE THAT WE FEED INTO IT
-function getYoutubeClip(){
+function getYoutubeClip(trailerTitle){
 
     //HERE IS THE SEARCH THAT WE ARE PERFORMING THROUGH THE YOUTUBE API.  VARIABLES ASSIGNED TO EACH INSTANCE, 2 CONSTANTS ARE THE BASE URL AND THE YTAPI KEY.  THE ADDITIONAL STRING &key= IS TO MAKE THE BROWSER READ THE API KEY AFTER THE TITLE
 
-  fetch(baseURL + Title + "&key=" + ytApiKey)
+  fetch(baseURL + trailerTitle + "&key=" + ytApiKey)
 
   .then(function(response) {
       return response.json();

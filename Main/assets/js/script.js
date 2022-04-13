@@ -23,5 +23,7 @@ fetchKeyYouTube().then((key) => {
     secretKey = key.apiKey;
     console.log(secretKey);
 });
-      
-    
+
+// Sets the volume of the "Welcome Audio".
+var audio = document.getElementById("welcome-audio");
+audio.volume = 0.33;

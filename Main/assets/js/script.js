@@ -2,8 +2,20 @@
 let baseURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q="
 //just a hard coded example to test.  eventually just becomes the movie title that is written into the iframe
 let Title = "No Country For Old Men Official Trailer";
-let ytApiKey;
 
+let tmdbUrl = "https://api.themoviedb.org/3/genre/movie/list?api_key="
+//List of genre IDs
+var action = 28;
+var crime = 80;
+var comedy = 
+
+
+
+
+
+
+let ytApiKey;
+let tmdbApiKey;
 
 // This calls the API, just update the url to have your key's name.  API KEY FOR MOVIE DATABASE
 async function fetchKey() {
@@ -14,8 +26,9 @@ async function fetchKey() {
 }
 // Call this wherever you need your key.
 fetchKey().then((key) => {
-    secretKey = key.apiKey;
-    console.log(secretKey);
+    tmdbApiKey = key.apiKey;
+    console.log(tmdbApiKey);
+    getTMDB();
 
 });
 
@@ -40,14 +53,35 @@ var audio = document.getElementById("welcome-audio");
 audio.volume = 0.33;
 
 
+function getTMDB() {
+    fetch(tmdbUrl + tmdbApiKey)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        
+    })
+
+    
+}
+
+
+
+
+
+
+
 //GLOBAL VARIABLE FOR THE YTAPIKEY SO THAT WE CAN USE IT IN THE FUNCTION BELOW FOR THE SEARCH FUNCTION WITH THE YOUTUBE API
 var ytAPIKey= fetchKeyYouTube();
 console.log("Youtube fetch key is " + ytAPIKey);
 
+
 //function to fetch YOUTUBE SEARCH RESULTSD FOR THE MOVIE TITLE THAT WE FEED INTO IT
 function getYoutubeClip(){
-    console.log(ytApiKey);
+
     //HERE IS THE SEARCH THAT WE ARE PERFORMING THROUGH THE YOUTUBE API.  VARIABLES ASSIGNED TO EACH INSTANCE, 2 CONSTANTS ARE THE BASE URL AND THE YTAPI KEY.  THE ADDITIONAL STRING &key= IS TO MAKE THE BROWSER READ THE API KEY AFTER THE TITLE
+
   fetch(baseURL + Title + "&key=" + ytApiKey)
 
   .then(function(response) {

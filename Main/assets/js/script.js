@@ -1,9 +1,18 @@
 
 let baseURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q="
 let Title = "No Country For Old Men Official Trailer";
+let tmdbUrl = "https://api.themoviedb.org/3/genre/movie/list?api_key="
+//List of genre IDs
+var action = 28;
+var crime = 80;
+var comedy = 
+
+
+
+
 
 let ytApiKey;
-
+let tmdbApiKey;
 
 // This calls the API, just update the url to have your key's name.
 async function fetchKey() {
@@ -14,8 +23,9 @@ async function fetchKey() {
 }
 // Call this wherever you need your key.
 fetchKey().then((key) => {
-    secretKey = key.apiKey;
-    console.log(secretKey);
+    tmdbApiKey = key.apiKey;
+    console.log(tmdbApiKey);
+    getTMDB();
 
 });
 
@@ -37,12 +47,28 @@ fetchKeyYouTube().then((key) => {
 var audio = document.getElementById("welcome-audio");
 audio.volume = 0.33;
 
-var ytAPIKey= fetchKeyYouTube();
-console.log("Youtube fetch key is " + ytAPIKey);
+function getTMDB() {
+    fetch(tmdbUrl + tmdbApiKey)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        
+    })
+
+    
+}
+
+
+
+
+
+
+
 
 //function to fetch
 function getYoutubeClip(){
-    console.log(ytApiKey);
   fetch(baseURL + Title + "&key=" + ytApiKey)
 
   .then(function(response) {

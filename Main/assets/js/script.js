@@ -3,11 +3,11 @@ let baseURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&max
 //just a hard coded example to test.  eventually just becomes the movie title that is written into the iframe
 let Title = "No Country For Old Men Official Trailer";
 
-let tmdbUrl = "https://api.themoviedb.org/3/genre/movie/list?api_key="
+let tmdbUrl = "https://api.themoviedb.org/3/discover/movie?api_key="
 //List of genre IDs
 var action = 28;
 var crime = 80;
-var comedy = 
+var comedy = 35;
 
 
 
@@ -54,7 +54,7 @@ audio.volume = 0.33;
 
 
 function getTMDB() {
-    fetch(tmdbUrl + tmdbApiKey)
+    fetch(tmdbUrl +  tmdbApiKey + "&with_genres=28")
     .then(function (response) {
         return response.json();
     })

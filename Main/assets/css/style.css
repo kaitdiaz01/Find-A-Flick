@@ -147,6 +147,11 @@ h1 {
     font-size: 100px;
     }
 
+
+.hide {
+    display: none;
+}
+
 .opacity {
     opacity: 0.7;
 }

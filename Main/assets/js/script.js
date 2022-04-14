@@ -4,6 +4,12 @@ let baseURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&max
 //just a hard coded example to test.  eventually just becomes the movie title that is written into the iframe
 let trailerTitle;
 
+// Get all elements, traverse the DOM
+var movieTitleEl = document.getElementById("movie-title");
+var moviePlotEl = document.getElementById("movie-overview");
+var dataGenreEl = document.querySelector(".genre");
+
+
 // /discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=150
 let tmdbUrl = "https://api.themoviedb.org/3/discover/movie?api_key="
 //List of genre IDs
@@ -112,3 +118,12 @@ function getYoutubeClip(trailerTitle){
       console.log(err)
   })    
 }
+
+dataGenreEl.addEventListener("click",function (event) {
+    event.preventDefault();
+    if (event.target.matches("button")) {
+        event.target.dataset.genre;
+        console.log(event.target.dataset.genre);
+    }
+    
+})

@@ -50,9 +50,15 @@ fetchKey().then((key) => {
 
 });
 
+
+// API keys for YT
+// 'https://yorkieportunus.herokuapp.com/store/find-a-flick-utube' 
+// 'https://yorkieportunus.herokuapp.com/store/find-a-flick'
+    
+
 // This calls the API, just update the url to have your key's name.
 async function fetchKeyYouTube() {
-    const url = 'https://yorkieportunus.herokuapp.com/store/find-a-flick-utube'
+    const url = 'https://yorkieportunus.herokuapp.com/store/find-a-flick'
     const response = await fetch(url);
     const key = await response.json();
     return key;
@@ -143,7 +149,7 @@ function getYoutubeClip(trailerTitle){
       src="https://www.youtube.com/embed/${videoIdTrailer}"
       frameborder="0"></iframe>`;
  
-    //   trailerEl.innerHTML = youtubeClip;
+      trailerEl.innerHTML = youtubeClip;
 
   })
   .catch(function(err){

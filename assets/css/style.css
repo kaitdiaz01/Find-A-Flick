@@ -163,9 +163,9 @@ h1 {
 }
 
 #movie-title {
-    top: 230px;
-    left: 900px;
-    font-size: 40px;
+    top: 240px;
+    left: 868px;
+    font-size: 30px;
     color: var(--font-color);
     font-family: 'Fugaz One', cursive;
 
@@ -179,8 +179,8 @@ h1 {
 }
 
 #trailer {
-    left: 849px;
-    top: 443px;
+    left: 879px;
+    top: 435px;
 }
 
 
@@ -223,11 +223,16 @@ h1 {
 @media only screen and (max-width:1200px) {
     #trailer {
         left: 716px;
-        top: 415px;
+        top: 426px;
+    }
+
+    #movie-title {
+        top: 226px;
+        left: 712px;
     }
 
     #movie-overview {
-        top: 800px;
-        left: 900px;
+        top: 675px;
+        left: 712px;
     }
 }

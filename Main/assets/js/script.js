@@ -9,6 +9,8 @@ var movieTitleEl = document.getElementById("movie-title");
 var moviePlotEl = document.getElementById("movie-overview");
 var trailerEl = document.getElementById("trailer");
 var dataGenreEl = document.querySelector(".genre");
+var movieContainer = document.getElementById("random-movie");
+var welcomeScreenEl = document.querySelector(".container");
 
 
 
@@ -68,7 +70,7 @@ fetchKeyYouTube().then((key) => {
 var audio = document.getElementById("welcome-audio");
 audio.volume = 0.33;
 
-
+// Gets the random movie along with title and overview
 function getTMDB(genreUrlNum) {
     fetch(tmdbUrl +  tmdbApiKey + "&language=en-US&with_genres=" + genreUrlNum + "&sort_by=vote_average.desc&vote_count.gte=1000")
     .then(function (response) {
@@ -77,19 +79,42 @@ function getTMDB(genreUrlNum) {
     .then(function(data) {
         console.log(data);
         trailerTitle = data.results[0].title + " official trailer";
+        newMovieTitle = data.results[0].title
         console.log(trailerTitle);
         getYoutubeClip(trailerTitle);
         var overview = data.results[0].overview 
         console.log(overview);
+       
+        movieTitleEl.textContent = newMovieTitle;
+        moviePlotEl.textContent = overview
+
+
+
     })
 
     
 }
 
 
+dataGenreEl.addEventListener("click",function genreMovie (event) {
+    event.preventDefault();
+    if (event.target.matches("button")) {
+        genreUrlNum = event.target.dataset.genre;
+        getTMDB(genreUrlNum);
+        console.log(genreUrlNum);
+        welcomeScreenEl.setAttribute("class", "hide");
+        movieContainer.removeAttribute("class");
+
+
+    }
+
+
+    
+})
+
 //GLOBAL VARIABLE FOR THE YTAPIKEY SO THAT WE CAN USE IT IN THE FUNCTION BELOW FOR THE SEARCH FUNCTION WITH THE YOUTUBE API
-var ytAPIKey= fetchKeyYouTube();
-console.log("Youtube fetch key is " + ytAPIKey);
+// var ytAPIKey= fetchKeyYouTube();
+// console.log("Youtube fetch key is " + ytAPIKey);
 
 
 //function to fetch YOUTUBE SEARCH RESULTSD FOR THE MOVIE TITLE THAT WE FEED INTO IT
@@ -118,7 +143,7 @@ function getYoutubeClip(trailerTitle){
       src="https://www.youtube.com/embed/${videoIdTrailer}"
       frameborder="0"></iframe>`;
  
-    //   document.getElementById("movieContainer").innerHTML = youtubeClip;
+    //   trailerEl.innerHTML = youtubeClip;
 
   })
   .catch(function(err){
@@ -126,13 +151,4 @@ function getYoutubeClip(trailerTitle){
   })    
 }
 
-dataGenreEl.addEventListener("click",function genreMovie (event) {
-    event.preventDefault();
-    if (event.target.matches("button")) {
-        genreUrlNum = event.target.dataset.genre;
-        getTMDB(genreUrlNum);
-        console.log(genreUrlNum);
-    }
 
-    
-})

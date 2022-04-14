@@ -45,7 +45,7 @@ async function fetchKey() {
 // Call this wherever you need your key.
 fetchKey().then((key) => {
     tmdbApiKey = key.apiKey;
-    console.log(tmdbApiKey);
+    // console.log(tmdbApiKey);
     getTMDB();
 
 });
@@ -68,8 +68,7 @@ async function fetchKeyYouTube() {
 // SAME AS BELOW BUT FOR THE YOUTUBE API KEY
 fetchKeyYouTube().then((key) => {
     ytApiKey = key.apiKey;
-    console.log(ytApiKey);
-    // getYoutubeClip();
+    // console.log(ytApiKey);
 });
 
 // Sets the volume of the "Welcome Audio".
@@ -87,13 +86,15 @@ function getTMDB(genreUrlNum) {
         //random number generator to get a random movie from the 20 movie list
         let movieListNum = Math.floor(Math.random() * 20);
 
-
+        //assigns variable to the movie title for the page, and the movie title with official trailer attached for the youtube search
         trailerTitle = data.results[movieListNum].title + " official trailer";
-        newMovieTitle = data.results[movieListNum].title
-        console.log(trailerTitle);
+        newMovieTitle = data.results[movieListNum].title;
+
+        // console.log(trailerTitle);
         getYoutubeClip(trailerTitle);
+
         var overview = data.results[movieListNum].overview 
-        console.log(overview);
+        // console.log(overview);
        
         movieTitleEl.textContent = newMovieTitle;
         moviePlotEl.textContent = overview
@@ -138,18 +139,23 @@ function getYoutubeClip(trailerTitle){
   .then(function(data){
       console.log(data);
       console.log(data.items)
+
       //parsing out and logging items from the API.  we are getting a specific item from the data object by parsing through the objects in Data. IN THIS INSTANCE TEH OBJECT WE ARE GETTING IS THE VIDEO ID FOR THE IFRAME PLAYER
       console.log(data.items[0].id.videoId)
 
 
       //assigning the video id that we parsed out to a global variable that way we can use it in the <iframe>
       let videoIdTrailer = data.items[0].id.videoId;
-      console.log(videoIdTrailer);
+    //   console.log(videoIdTrailer);
 
       let youtubeClip = `
       <iframe id="ytplayer" type="text/html" width="640" height="360"
       src="https://www.youtube.com/embed/${videoIdTrailer}"
-      frameborder="0"></iframe>`;
+      frameborder="0"allowfullscreen="allowfullscreen"
+      mozallowfullscreen="mozallowfullscreen" 
+      msallowfullscreen="msallowfullscreen" 
+      oallowfullscreen="oallowfullscreen" 
+      webkitallowfullscreen="webkitallowfullscreen"></iframe>`;
  
       trailerEl.innerHTML = youtubeClip;
 

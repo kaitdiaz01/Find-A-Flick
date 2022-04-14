@@ -84,17 +84,19 @@ function getTMDB(genreUrlNum) {
     })
     .then(function(data) {
         console.log(data);
-        trailerTitle = data.results[0].title + " official trailer";
-        newMovieTitle = data.results[0].title
+        //random number generator to get a random movie from the 20 movie list
+        let movieListNum = Math.floor(Math.random() * 20);
+
+
+        trailerTitle = data.results[movieListNum].title + " official trailer";
+        newMovieTitle = data.results[movieListNum].title
         console.log(trailerTitle);
         getYoutubeClip(trailerTitle);
-        var overview = data.results[0].overview 
+        var overview = data.results[movieListNum].overview 
         console.log(overview);
        
         movieTitleEl.textContent = newMovieTitle;
         moviePlotEl.textContent = overview
-
-
 
     })
 

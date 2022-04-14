@@ -14,6 +14,8 @@ Find-a-Flick.
 
 **Link:** [Live Link to website](https://kaitdiaz01.github.io/Find-A-Flick/)
 
+**Powerpoint:** [Link to PPT](https://docs.google.com/presentation/d/14uuiDYxejIoI0HQf-osS4uq93CbU3tnizKCn9gq3OJo/edit#slide=id.p)
+
 **Screenshot of Find-a-flick:**
 
 

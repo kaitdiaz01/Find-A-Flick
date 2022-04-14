@@ -51,7 +51,7 @@ fetchKey().then((key) => {
 });
 
 
-// API keys for YT
+// API keys for YouTuube API
 // 'https://yorkieportunus.herokuapp.com/store/find-a-flick-utube' 
 // 'https://yorkieportunus.herokuapp.com/store/find-a-flick'
     

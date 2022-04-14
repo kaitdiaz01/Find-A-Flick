@@ -8,6 +8,7 @@
     background-color: var(--header-color);
 }
 
+
 .title, .subtitle{
     font-family: 'Fugaz One', cursive;
     font-size: 3rem;
@@ -67,6 +68,15 @@ button {
 .button-color {
     background-color: var(--header-color);
     color: var(--font-color);
+}
+
+.button-color:hover {
+    background-color: aquamarine;
+}
+
+.button-color:focus {
+    background-color: aquamarine;
+    color: black;
 }
 
 #action {
@@ -133,6 +143,28 @@ h1 {
     justify-content: center;
     text-align: center;
 }
+
+#movie-title {
+    top: 230px;
+    left: 900px;
+    font-size: 40px;
+    color: var(--font-color);
+    font-family: 'Fugaz One', cursive;
+
+}
+
+#movie-overview {
+    top: 800px;
+    left: 900px;
+    background-color: white;
+    padding: 30px;
+}
+
+#trailer {
+    left: 900px;
+    top: 480px;
+}
+
 
 .devTeam {
     font-size: 1.25rem;

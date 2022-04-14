@@ -58,7 +58,7 @@ fetchKey().then((key) => {
 
 // This calls the API, just update the url to have your key's name.
 async function fetchKeyYouTube() {
-    const url = 'https://yorkieportunus.herokuapp.com/store/find-a-flick'
+    const url = 'https://yorkieportunus.herokuapp.com/store/youtube-rtkey'
     const response = await fetch(url);
     const key = await response.json();
     return key;
@@ -149,7 +149,7 @@ function getYoutubeClip(trailerTitle){
     //   console.log(videoIdTrailer);
 
       let youtubeClip = `
-      <iframe id="ytplayer" type="text/html" width="640" height="360"
+      <iframe id="ytplayer" type="text/html" width="550" height="300"
       src="https://www.youtube.com/embed/${videoIdTrailer}"
       frameborder="0"allowfullscreen="allowfullscreen"
       mozallowfullscreen="mozallowfullscreen" 

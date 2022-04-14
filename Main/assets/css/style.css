@@ -1,4 +1,3 @@
-
 :root {
     --header-color: #141E61;
     --font-color: #EEEEEE;
@@ -9,7 +8,8 @@
 }
 
 
-.title, .subtitle{
+.title,
+.subtitle {
     font-family: 'Fugaz One', cursive;
     font-size: 3rem;
     color: var(--font-color);
@@ -28,7 +28,7 @@
 
 
 
-.floating-1 { 
+.floating-1 {
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -38,7 +38,7 @@
     margin-bottom: 5px;
 }
 
-.floating-2 { 
+.floating-2 {
     animation-name: floating-2;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -49,15 +49,31 @@
 }
 
 @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(15px, 0px); }
-    100%   { transform: translate(0, -0px); }   
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(15px, 0px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
 }
 
 @keyframes floating-2 {
-    0% { transform: translate(15px,  0px); }
-    50%  { transform: translate(0px, 0px); }
-    100%   { transform: translate(15px, -0px); }   
+    0% {
+        transform: translate(15px, 0px);
+    }
+
+    50% {
+        transform: translate(0px, 0px);
+    }
+
+    100% {
+        transform: translate(15px, -0px);
+    }
 }
 
 button {
@@ -80,12 +96,14 @@ button {
 }
 
 #action {
-    font-family:'Bangers', cursive;
+    font-family: 'Bangers', cursive;
     font-size: 20px;
 }
-#crime, #mystery {
-   font-family:'Special Elite', cursive;
-   font-size: 20px;
+
+#crime,
+#mystery {
+    font-family: 'Special Elite', cursive;
+    font-size: 20px;
 }
 
 #comedy {
@@ -154,15 +172,15 @@ h1 {
 }
 
 #movie-overview {
-    top: 800px;
-    left: 900px;
+    top: 746px;
+    left: 859px;
     background-color: white;
     padding: 30px;
 }
 
 #trailer {
-    left: 900px;
-    top: 480px;
+    left: 849px;
+    top: 443px;
 }
 
 
@@ -178,7 +196,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    }
+}
 
 .container {
     position: relative;
@@ -186,7 +204,7 @@ h1 {
     color: white;
     font-family: fugaz one;
     font-size: 100px;
-    }
+}
 
 
 .hide {
@@ -200,4 +218,16 @@ h1 {
 
 #welcome-audio {
     opacity: 69%;
+}
+
+@media only screen and (max-width:1200px) {
+    #trailer {
+        left: 716px;
+        top: 415px;
+    }
+
+    #movie-overview {
+        top: 800px;
+        left: 900px;
+    }
 }

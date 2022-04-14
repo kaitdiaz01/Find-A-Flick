@@ -7,7 +7,9 @@ let trailerTitle;
 // Get all elements, traverse the DOM
 var movieTitleEl = document.getElementById("movie-title");
 var moviePlotEl = document.getElementById("movie-overview");
+var trailerEl = document.getElementById("trailer");
 var dataGenreEl = document.querySelector(".genre");
+
 
 
 // /discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=150
@@ -73,9 +75,10 @@ function getTMDB() {
         trailerTitle = data.results[0].title + " official trailer";
         console.log(trailerTitle);
         getYoutubeClip(trailerTitle);
-        
+        var overview = data.results[0].overview 
+        console.log(overview);
     })
-
+    
     
 }
 
@@ -119,11 +122,12 @@ function getYoutubeClip(trailerTitle){
   })    
 }
 
-dataGenreEl.addEventListener("click",function (event) {
+dataGenreEl.addEventListener("click",function genreMovie (event) {
     event.preventDefault();
     if (event.target.matches("button")) {
         event.target.dataset.genre;
         console.log(event.target.dataset.genre);
     }
+
     
 })

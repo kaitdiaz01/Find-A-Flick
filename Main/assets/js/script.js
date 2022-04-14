@@ -10,8 +10,11 @@ var moviePlotEl = document.getElementById("movie-overview");
 var dataGenreEl = document.querySelector(".genre");
 
 
+//elements for the URL for the TMDB search
 // /discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=150
 let tmdbUrl = "https://api.themoviedb.org/3/discover/movie?api_key="
+// let genreUrlNum;
+
 //List of genre IDs
 var action = "28";
 var crime = "80";
@@ -24,8 +27,10 @@ var romance = "10749";
 var scifi = "878";
 var thriller = "53";
 
+//api Keys
 let ytApiKey;
 let tmdbApiKey;
+
 
 // This calls the API, just update the url to have your key's name.  API KEY FOR MOVIE DATABASE
 async function fetchKey() {
@@ -63,8 +68,8 @@ var audio = document.getElementById("welcome-audio");
 audio.volume = 0.33;
 
 
-function getTMDB() {
-    fetch(tmdbUrl +  tmdbApiKey + "&language=en-US&with_genres=18&sort_by=vote_average.desc&vote_count.gte=1000")
+function getTMDB(genreUrlNum) {
+    fetch(tmdbUrl +  tmdbApiKey + "&language=en-US&with_genres=" + genreUrlNum + "&sort_by=vote_average.desc&vote_count.gte=1000")
     .then(function (response) {
         return response.json();
     })
@@ -75,7 +80,6 @@ function getTMDB() {
         getYoutubeClip(trailerTitle);
         
     })
-
     
 }
 
@@ -122,8 +126,9 @@ function getYoutubeClip(trailerTitle){
 dataGenreEl.addEventListener("click",function (event) {
     event.preventDefault();
     if (event.target.matches("button")) {
-        event.target.dataset.genre;
-        console.log(event.target.dataset.genre);
+        genreUrlNum = event.target.dataset.genre;
+        getTMDB(genreUrlNum);
+        console.log(genreUrlNum);
     }
     
 })

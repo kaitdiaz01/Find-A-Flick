@@ -59,6 +59,11 @@
     100%   { transform: translate(15px, -0px); }   
 }
 
+button {
+    width: 42%;
+    font-variant: small-caps;
+}
+
 .button-color {
     background-color: var(--header-color);
     color: var(--font-color);
@@ -66,42 +71,46 @@
 
 #action {
     font-family:'Bangers', cursive;
-    font-size: 17px;
+    font-size: 20px;
 }
 #crime, #mystery {
    font-family:'Special Elite', cursive;
+   font-size: 20px;
 }
 
 #comedy {
     font-family: 'Indie Flower', cursive;
-    font-size: 17px;
+    font-size: 21px;
 }
 
 #drama {
     font-family: 'Limelight', cursive;
+    font-size: 21px;
 }
 
 #fantasy {
     font-family: 'Pacifico', cursive;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #horror {
     font-family: 'Rubik Wet Paint', cursive;
+    font-size: 21px;
 }
 
 #romance {
     font-family: 'Homemade Apple', cursive;
+    font-size: 19px;
 }
 
 #sci-fi {
     font-family: 'Teko', sans-serif;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 #thriller {
     font-family: 'Bebas Neue', cursive;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .subtitle {

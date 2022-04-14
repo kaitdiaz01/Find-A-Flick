@@ -11,3 +11,13 @@ Mystery Flicks
 Find them all at,
 
 Find-a-Flick.
+
+**Link:** [Live Link to website](https://kaitdiaz01.github.io/Find-A-Flick/)
+
+**Screenshot of Find-a-flick:**
+
+
+
+![Screenshot](./assets/images/Find-a-flick.png)
+
+

@@ -7,10 +7,11 @@ let trailerTitle;
 // Get all elements, traverse the DOM
 var movieTitleEl = document.getElementById("movie-title");
 var moviePlotEl = document.getElementById("movie-overview");
+var trailerEl = document.getElementById("trailer");
 var dataGenreEl = document.querySelector(".genre");
 
 
-//elements for the URL for the TMDB search
+
 // /discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=150
 let tmdbUrl = "https://api.themoviedb.org/3/discover/movie?api_key="
 // let genreUrlNum;
@@ -78,8 +79,10 @@ function getTMDB(genreUrlNum) {
         trailerTitle = data.results[0].title + " official trailer";
         console.log(trailerTitle);
         getYoutubeClip(trailerTitle);
-        
+        var overview = data.results[0].overview 
+        console.log(overview);
     })
+
     
 }
 
@@ -123,12 +126,13 @@ function getYoutubeClip(trailerTitle){
   })    
 }
 
-dataGenreEl.addEventListener("click",function (event) {
+dataGenreEl.addEventListener("click",function genreMovie (event) {
     event.preventDefault();
     if (event.target.matches("button")) {
         genreUrlNum = event.target.dataset.genre;
         getTMDB(genreUrlNum);
         console.log(genreUrlNum);
     }
+
     
 })
